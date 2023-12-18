@@ -2,6 +2,10 @@ import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 
 import prismadb from "@/lib/prismadb";
+import Navbar from "@/components/navbar";
+import PageWrapper from "@/components/page-wrapper";
+import MarginWidthWrapper from "@/components/margin-width-wrapper";
+import { SideNav } from "@/components/side-nav";
 
 export default async function DashboardLayout({
   children,
@@ -27,5 +31,17 @@ export default async function DashboardLayout({
     redirect("/");
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      <div className="flex">
+        <SideNav />
+        <main className="flex-1">
+          <MarginWidthWrapper>
+            <Navbar />
+            <PageWrapper>{children}</PageWrapper>
+          </MarginWidthWrapper>
+        </main>
+      </div>
+    </>
+  );
 }
