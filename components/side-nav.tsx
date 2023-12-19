@@ -35,7 +35,7 @@ export function SideNav({
       active: pathname === `/${params.storeId}/posts`,
     },
     {
-      label: "Settings",
+      label: "Configuración",
       href: `/${params.storeId}/settings`,
       icon: <Icon icon="lucide:settings" width="24" height="24" />,
       active: pathname === `/${params.storeId}/settings`,
@@ -44,7 +44,7 @@ export function SideNav({
   ];
 
   return (
-    <div className="md:w-60 bg-white h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
+    <div className="md:w-60 bg-gray-100 h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
       <div className="flex flex-col space-y-6 w-full">
         <Link
           href="/"
@@ -116,8 +116,8 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
       ) : (
         <Link
           href={item.href}
-          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-zinc-100 ${
-            item.href === pathname ? "bg-zinc-100" : ""
+          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-lime-500 ${
+            item.href === pathname ? "bg-lime-500" : ""
           }`}
         >
           {item.icon}
