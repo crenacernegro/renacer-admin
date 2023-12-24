@@ -11,11 +11,11 @@ import { ApiList } from "@/components/ui/api-list";
 
 import { columns, ProjectColumn } from "./columns";
 
-interface ProjectClientProps {
+interface ProjectsClientProps {
   data: ProjectColumn[];
 }
 
-export const ProjectClient: React.FC<ProjectClientProps> = ({ data }) => {
+export const ProjectsClient: React.FC<ProjectsClientProps> = ({ data }) => {
   const params = useParams();
   const router = useRouter();
 

@@ -1,11 +1,18 @@
 import prismadb from "@/lib/prismadb";
 
-import { ProjectForm } from "../[projectId]/components/project-form";
+import { ProjectForm } from "./components/project-form";
 
-const ProjectPage = async ({ params }: { params: { projectId: string } }) => {
+const ProjectPage = async ({
+  params,
+}: {
+  params: { projectId: string; storeId: string };
+}) => {
   const project = await prismadb.project.findUnique({
     where: {
       id: params.projectId,
+    },
+    include: {
+      images: true,
     },
   });
 
