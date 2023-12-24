@@ -30,7 +30,7 @@ export async function GET(
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { storeId: string; projectId: string } }
+  { params }: { params: { projectId: string; storeId: string } }
 ) {
   try {
     const { userId } = auth();
@@ -69,7 +69,7 @@ export async function DELETE(
 
 export async function PATCH(
   req: Request,
-  { params }: { params: { storeId: string; projectId: string } }
+  { params }: { params: { projectId: string; storeId: string } }
 ) {
   try {
     const { userId } = auth();
@@ -100,6 +100,7 @@ export async function PATCH(
         status: 400,
       });
     }
+
     if (!images || !images.length) {
       return new NextResponse("Images are required", { status: 400 });
     }

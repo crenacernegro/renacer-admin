@@ -21,10 +21,6 @@ export async function POST(
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
     }
-    if (!images || !images.length) {
-      return new NextResponse("Images are required", { status: 400 });
-    }
-
     if (!description) {
       return new NextResponse("Description is required", { status: 400 });
     }
@@ -35,6 +31,10 @@ export async function POST(
       return new NextResponse("Number of participants is required", {
         status: 400,
       });
+    }
+
+    if (!images || !images.length) {
+      return new NextResponse("Images are required", { status: 400 });
     }
 
     if (!params.storeId) {
