@@ -35,6 +35,12 @@ export function SideNav({
       active: pathname === `/${params.storeId}/posts`,
     },
     {
+      label: "Información de contacto",
+      href: `/${params.storeId}/contactinfo`,
+      icon: <Icon icon="lucide:contact-2" width="24" height="24" />,
+      active: pathname === `/${params.storeId}/contactinfo`,
+    },
+    {
       label: "Configuración",
       href: `/${params.storeId}/settings`,
       icon: <Icon icon="lucide:settings" width="24" height="24" />,
