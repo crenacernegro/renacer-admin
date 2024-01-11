@@ -28,9 +28,9 @@ import { useOrigin } from "@/hooks/use-origin";
 
 const formSchema = z.object({
   name: z.string().min(2),
-  phone: z.string().min(2).optional(),
-  address: z.string().min(2).optional(),
-  email: z.string().email().optional(),
+  phone: z.string().min(2),
+  address: z.string().min(2),
+  email: z.string().email(),
 });
 
 type SettingsFormValues = z.infer<typeof formSchema>;
