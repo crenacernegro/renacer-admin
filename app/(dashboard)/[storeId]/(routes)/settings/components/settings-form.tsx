@@ -28,6 +28,9 @@ import { useOrigin } from "@/hooks/use-origin";
 
 const formSchema = z.object({
   name: z.string().min(2),
+  phone: z.string().min(2).optional(),
+  address: z.string().min(2).optional(),
+  email: z.string().email().optional(),
 });
 
 type SettingsFormValues = z.infer<typeof formSchema>;
@@ -116,6 +119,57 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
                     <Input
                       disabled={loading}
                       placeholder="Nombre sitio web"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Teléfono</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Teléfono de contacto"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="address"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Dirección</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Dirección"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Correo electrónico</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Correo electrónico"
                       {...field}
                     />
                   </FormControl>

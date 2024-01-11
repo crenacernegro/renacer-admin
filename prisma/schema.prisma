@@ -14,6 +14,9 @@ datasource db {
 model Store {
   id        String    @id @default(uuid())
   name      String
+  phone     String
+  address   String
+  email     String
   userId    String
   projects  Project[] @relation("StoreToProject")
   createdAt DateTime  @default(now())
