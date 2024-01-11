@@ -24,6 +24,9 @@ import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
   name: z.string().min(1),
+  phone: z.string().min(1),
+  address: z.string().min(1),
+  email: z.string().min(1),
 });
 
 export const StoreModal = () => {
@@ -35,6 +38,9 @@ export const StoreModal = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      phone: "",
+      address: "",
+      email: "",
     },
   });
 
@@ -72,6 +78,57 @@ export const StoreModal = () => {
                         <Input
                           disabled={loading}
                           placeholder="Nuevo sitio web"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Teléfono</FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={loading}
+                          placeholder="Teléfono de contacto"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="address"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Dirección</FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={loading}
+                          placeholder="Dirección"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Correo electrónico</FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={loading}
+                          placeholder="Correo electrónico"
                           {...field}
                         />
                       </FormControl>
