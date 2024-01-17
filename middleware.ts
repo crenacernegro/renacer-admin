@@ -8,7 +8,7 @@ export default authMiddleware({
     "/",
     "/projects",
     "/api/309c0e25-251c-4f13-a300-169ae2a631dd/projects",
-    "/api/309c0e25-251c-4f13-a300-169ae2a631dd/projects/${projectId}",
+    "/api/309c0e25-251c-4f13-a300-169ae2a631dd/projects/667de685-807c-4c34-8501-dbeffa46bd62",
   ],
 });
 
